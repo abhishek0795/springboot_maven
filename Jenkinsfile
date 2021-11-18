@@ -1,7 +1,7 @@
 pipeline{
     agent any
     tools{
-        maven 'Maven'
+        maven 'MAVEN'
     }
     environment {
         GIT_TAG = "build-$BUILD_NUMBER"
