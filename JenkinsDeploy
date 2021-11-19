@@ -34,7 +34,7 @@ pipeline{
       stage('CLEAN UP'){
             steps{
                 echo "Removing dangling images..."
-                sh 'docker image prune -f'
+                sh '/Applications/Docker.app/Contents/Resources/bin/docker image prune -f'
             }
         }
     }
