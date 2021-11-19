@@ -29,10 +29,10 @@ pipeline{
                 withCredentials([
                     usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')
                 ]){
-                    sh('docker build -t $USERNAME/java-mvn:$GIT_TAG .')
+                    sh('/Applications/Docker.app/Contents/Resources/bin/docker build -t $USERNAME/java-mvn:$GIT_TAG .')
                     // don't use this
 //                     sh "echo $PASSWORD | docker login -u $USERNAME --password-stdin"   
-                    sh('echo $PASSWORD | docker login -u $USERNAME --password-stdin')
+                    sh('echo $PASSWORD | /Applications/Docker.app/Contents/Resources/bin/docker login -u $USERNAME --password-stdin')
                     sh('/Applications/Docker.app/Contents/Resources/bin/docker push $USERNAME/java-mvn:$GIT_TAG')
                 }
             }
