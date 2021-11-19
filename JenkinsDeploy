@@ -23,7 +23,7 @@ pipeline{
                 if (env.APPROVE_QA == 'YES'){
                     sh "/Applications/Docker.app/Contents/Resources/bin/docker rm -f springboot-app-dev || true"  // for removing dev container
                     sh "/Applications/Docker.app/Contents/Resources/bin/docker rm -f springboot-app-qa || true"
-                    sh "/Applications/Docker.app/Contents/Resources/bin/docker run --rm -dp 5000:8080 --name springboot-app-qa abhishekjha95/java-mvn:build-${params.BUILD_NUMBER}"
+                    sh "/Applications/Docker.app/Contents/Resources/bin/docker run --rm -dp 4000:8080 --name springboot-app-qa abhishekjha95/java-mvn:build-${params.BUILD_NUMBER}"
                     echo "Application live on <your-ip>:5000"
                 }else{
                     echo "Deploy aborted!!"
