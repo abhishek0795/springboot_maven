@@ -19,7 +19,7 @@ pipeline{
                     // sh 'git add .'
                     // sh('git commit -m "bumped to $GIT_TAG"')
                     sh "git tag -a $GIT_TAG -m 'Version $BUILD_NUMBER'"
-                    sh('git push git@github.com:abhishek0795/springboot_maven.git HEAD:$BRANCH_NAME --tag')
+                    sh('git push git@github.com:abhishek0795/springboot_maven.git HEAD:$BRANCH_NAME --tag --force')
                 
                 }
             }
