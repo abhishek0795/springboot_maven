@@ -33,7 +33,7 @@ pipeline{
                     // don't use this
 //                     sh "echo $PASSWORD | docker login -u $USERNAME --password-stdin"   
                     sh('echo $PASSWORD | docker login -u $USERNAME --password-stdin')
-                    sh('docker push $USERNAME/java-mvn:$GIT_TAG')
+                    sh('/Applications/Docker.app/Contents/Resources/bin/docker push $USERNAME/java-mvn:$GIT_TAG')
                 }
             }
         }
